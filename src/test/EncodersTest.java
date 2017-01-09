@@ -30,6 +30,10 @@ public class EncodersTest {
 		
 		int[] scalarEncoding = scalarEncoder.encode(5.0);
 		System.out.println("ScalarEncoder Output = " + Arrays.toString(scalarEncoding));
+
+		scalarEncoder.getBucketInfo(scalarEncoding);
+		
+		System.out.println("*******");
 		
 		// Encoding a date
 		DateEncoder dateEncoder = DateEncoder
@@ -50,12 +54,12 @@ public class EncodersTest {
 			System.out.println("DateEncoder Output = " + Arrays.toString(dateEncoding));
 		}
 		
+		System.out.println("*******");
+		
 		// Encoding a category
 		ArrayList<String> categories = new ArrayList<String>();
-		categories.add("NO_NEWS");
-		categories.add("YELLOW_NEWS");
-		categories.add("ORANGE_NEWS");
-		categories.add("RED_NEWS");
+		categories.add("UP");
+		categories.add("DOWN");
 		
 		CategoryEncoder categoryEncoder = CategoryEncoder
 				.builder()
@@ -68,8 +72,12 @@ public class EncodersTest {
 				.categoryList(categories)
 				.build();
 
-		int[] categoryEncoding = categoryEncoder.encode("Bike");
+		int[] categoryEncoding = categoryEncoder.encode("UP");
 		System.out.println("CategoryEncoder Output = " + Arrays.toString(categoryEncoding));
+		categoryEncoding = categoryEncoder.encode("DOWN");
+		System.out.println("CategoryEncoder Output = " + Arrays.toString(categoryEncoding));
+		
+		System.out.println("*******");
 		
 		// Encoding a delta
 		DeltaEncoder deltaEncoder = DeltaEncoder
