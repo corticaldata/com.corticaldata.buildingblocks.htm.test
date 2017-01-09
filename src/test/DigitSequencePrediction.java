@@ -25,6 +25,12 @@ import gnu.trove.list.array.TIntArrayList;
  * Ejemplo de aprendizaje de secuencias de dígitos y predicción del siguiente dígito
  * utilizando Memoria Temporal Jerárquica (HTM).
  * 
+ * Aunque realmente para este ejemplo no tiene mucho sentido utilizar un SpatialPooler,
+ * ya que la entrada se reconoce perfectamente, entra por teclado, no creo que haga
+ * falta obtener una representación SDR, ya que el ScalarEncoder ya te da una.
+ * 
+ * Hago otro ejemplo sólo con el temporalpooler y el sdrclassificer en WithoutSpatialPoolerDigitSequencePrediction.
+ * 
  * @author paco
  */
 public class DigitSequencePrediction {
