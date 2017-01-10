@@ -9,8 +9,8 @@ import java.util.Map;
 
 import org.numenta.nupic.Parameters;
 import org.numenta.nupic.Parameters.KEY;
-import org.numenta.nupic.algorithms.CLAClassifier;
 import org.numenta.nupic.algorithms.Classification;
+import org.numenta.nupic.algorithms.SDRClassifier;
 import org.numenta.nupic.algorithms.SpatialPooler;
 import org.numenta.nupic.algorithms.TemporalMemory;
 import org.numenta.nupic.encoders.ScalarEncoder;
@@ -18,8 +18,6 @@ import org.numenta.nupic.model.ComputeCycle;
 import org.numenta.nupic.model.Connections;
 import org.numenta.nupic.util.ArrayUtils;
 import org.numenta.nupic.util.FastRandom;
-
-import gnu.trove.list.array.TIntArrayList;
 
 /**
  * Ejemplo de aprendizaje de secuencias de dígitos y predicción del siguiente dígito
@@ -84,7 +82,8 @@ public class DigitSequencePrediction {
 		
 		SpatialPooler spatialPooler = new SpatialPooler();
 		TemporalMemory temporalMemory = new TemporalMemory();
-		CLAClassifier classifier = new CLAClassifier(new TIntArrayList(new int[] {1}), 0.1, 0.3, 0);
+		SDRClassifier classifier = new SDRClassifier();
+		//SDRClassifier classifier = new SDRClassifier(new TIntArrayList(new int[] {1}), 0.1, 0.3, 0);
 		
 		Connections memory = new Connections();
 		

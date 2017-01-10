@@ -18,6 +18,7 @@ public class MultiEncoderTest {
 		// Date encoder
 		DateEncoder dateEncoder = DateEncoder
 				.builder()
+				.name("fecha")
 				.dayOfWeek(3)
 				.timeOfDay(5)
 				.season(3)
@@ -31,6 +32,7 @@ public class MultiEncoderTest {
 		
 		CategoryEncoder categoryEncoder = CategoryEncoder
 				.builder()
+				.name("category")
 				.w(3)
 				.radius(1.0)
 				.minVal(0.0)
@@ -65,6 +67,8 @@ public class MultiEncoderTest {
 		
 		int[] encoding = multiEncoder.encode(input);
 		System.out.println("Encoding: " + Arrays.toString(encoding));
+		
+		System.out.println();
 		
 	}
 }
